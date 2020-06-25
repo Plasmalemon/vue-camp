@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import App from './App.vue'
 import Bus from './utils/bus'
+import router from './router'
+
 
 Vue.config.productionTip = false
 Vue.prototype.$bus = new Bus()
@@ -12,5 +14,6 @@ Vue.prototype.$bus = new Bus()
 
 
 new Vue({
-  render: h => h(App),
+  router, // 路由3.配置router实例，为什么要挂载一下
+  render: h => h(App)
 }).$mount('#app')
