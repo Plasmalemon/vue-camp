@@ -1,6 +1,6 @@
 import Vue from 'vue'
-// import VueRouter from 'vue-router'
-import VueRouter from '../kvue-router'
+import VueRouter from 'vue-router'
+// import VueRouter from '../kvue-router'
 import Home from '../views/Home.vue'
 
 // 路由步骤：1、2、3、4
