@@ -24,6 +24,7 @@
     <!-- 这种写法还可以更简单。就像假定未指明的内容对应默认插槽一样，不带参数的 v-slot 被假定对应默认插槽 -->
     <!-- 只要出现多个插槽，请始终为所有的插槽使用完整的基于 <template> 的语法： -->
     <Comp2 v-slot="slot2Props">{{ slot2Props.foo }}</Comp2>
+    <VuexComponent />
   </div>
 </template>
 
@@ -31,6 +32,7 @@
 import Communication from "./Communication.vue";
 import Comp1 from "./slots/Comp1";
 import Comp2 from "./slots/Comp2";
+import VuexComponent from "./VuexComponent";
 export default {
   name: "EntryComponent",
   provide() {
@@ -41,7 +43,8 @@ export default {
   components: {
     Communication,
     Comp1,
-    Comp2
+    Comp2,
+    VuexComponent
   },
   mounted() {
     this.$refs.hw.xx = "xxxxx";
