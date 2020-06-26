@@ -1,7 +1,9 @@
+import "@babel/polyfill";
 import Vue from 'vue'
 import App from './App.vue'
 import Bus from './utils/bus'
 import router from './router'
+import store from './store'
 
 
 Vue.config.productionTip = false
@@ -14,6 +16,9 @@ Vue.prototype.$bus = new Bus()
 
 
 new Vue({
-  router, // 路由3.配置router实例，为什么要挂载一下
+  // 路由3.配置router实例，为什么要挂载一下
+  router,
+
+  store,
   render: h => h(App)
 }).$mount('#app')
