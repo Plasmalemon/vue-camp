@@ -4,6 +4,8 @@
     <Communication ref="hw" msg="组件入口" foo="foo" @myclick="onMyClick" />
     <Communication />
 
+    <!-- elemnt-form实现 -->
+    <form-test></form-test>
     <!-- 组件复合技术 -->
     <!-- 插槽 内容分发api 用于复合组件开发 -->
     <!-- 匿名插槽 -->
@@ -13,7 +15,7 @@
       <!-- 注意 v-slot 只能添加在 <template> 上 (只有一种例外情况， 独占默认插槽的缩写语法) -->
       <template v-slot:content>具名插槽 content...</template>
       <!-- 特殊情况， 数据是在子组件中定义的， 但是父组件又想去组织子组件的显示 -->
-      <!-- 作用域插槽 -->
+      <!-- 作用域插槽: 显示数据来自子组件 -->
       <!-- 通过slotProos赋值 -->
       <template v-slot:footer="slotProps">作用域插槽 footer...{{slotProps.foo}}</template>
       <!-- 对象解构 -->
@@ -33,6 +35,7 @@ import Communication from "./Communication.vue";
 import Comp1 from "./slots/Comp1";
 import Comp2 from "./slots/Comp2";
 import VuexComponent from "./VuexComponent";
+import FormTest from "./elementForm";
 export default {
   name: "EntryComponent",
   provide() {
@@ -44,7 +47,8 @@ export default {
     Communication,
     Comp1,
     Comp2,
-    VuexComponent
+    VuexComponent,
+    FormTest
   },
   mounted() {
     this.$refs.hw.xx = "xxxxx";
